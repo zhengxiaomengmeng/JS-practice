@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用循环将三个DIV变成红色</title>
+    <link rel="icon" href="../pics/dream.jpg">
+    <style>
+        body, ul, li {
+            padding: 0;
+            margin: 0;
+        }
+
+        .container {
+            width: 400px;
+            margin: 100px auto;
+            text-align: center;
+        }
+        #boxs {
+            list-style: none;
+            overflow: hidden;
+            zoom: 1;
+            margin: 10px auto;
+        }
+
+        #boxs li {
+            float: left;
+            width: 100px;
+            height: 100px;
+            margin-right: 10px;
+            background: black;
+        }
+
+        li:nth-child {
+            margin-right: 0;
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload = function () {
+            var btn = document.getElementsByTagName('button')[0];
+            var box = document.getElementsByClassName('box');
+            btn.onclick = function () {
+                for (i=0;i<box.length;i++){
+                    box[i].style['background'] = 'red';
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<div class="container">
+    <p>
+        <button type="button">点击将DIV变成红色</button>
+    </p>
+
+        <ul id="boxs">
+            <li class="box"></li>
+            <li class="box"></li>
+            <li class="box"></li>
+        </ul>
+
+
+</div>
+</body>
+</html>

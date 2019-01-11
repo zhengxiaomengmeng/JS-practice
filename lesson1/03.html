@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>函数接收参数并弹出</title>
+    <link rel="icon" href="../pics/dream.jpg">
+    <style type="text/css">
+        .container{
+            width: 300px;
+            height: 100px;
+            margin: 100px auto;
+            text-align: center;
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload = function () {
+            var inputs = document.getElementsByTagName('input');
+            var a= inputs[0].value;
+            var b = inputs[1].value;
+            var button = document.getElementsByTagName('button')[0];
+            button.onclick = function () {
+                alert(a);
+                alert(b);
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <p><input type="text" value="北京市"></p>
+        <p><input type="text" value="朝阳市"></p>
+        <p><button type="submit" title="传参" >传参</button></p>
+    </div>
+</body>
+</html>

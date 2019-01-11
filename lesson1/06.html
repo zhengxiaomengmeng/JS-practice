@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>记住密码提示框</title>
+    <link rel="icon" href="../pics/dream.jpg">
+    <style>
+        .container{
+            width: 500px;
+            margin: 100px auto;
+            text-align: center;
+        }
+        input{
+            margin-right: 5px;
+            vertical-align: middle;s
+        }
+        .info{
+            display: none;
+            width: 240px;
+            background: #ffefa4;
+            border: 1px solid #dff0d8;
+            color: #ccc;
+            margin: 0 auto;
+
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload = function () {
+            var label = document.getElementsByTagName('label')[0];
+            var info = document.getElementsByClassName('info')[0];
+            label.onmouseenter = function () {
+                info.style.cssText = 'display:block';
+            }
+            label.onmouseleave = function () {
+                info.style.cssText = 'display:none';
+            }
+        }
+    </script>
+</head>
+<body>
+<div class="container">
+    <label><input type="checkbox">两周内自动登陆</label>
+    <div class="info">为了您的信息安全，请不要在网吧或公用电脑上使用此功能！</div>
+</div>
+</body>
+</html>

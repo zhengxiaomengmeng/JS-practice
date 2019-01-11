@@ -1,0 +1,10 @@
+body{
+    background: #FDD;
+}
+.toolbar{
+    background:red;
+    border-color:#fff;
+}
+.toolbar li{
+    border-color:#fff;
+}

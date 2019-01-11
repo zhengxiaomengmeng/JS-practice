@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>控制div属性</title>
+    <link rel="icon" href="../pics/dream.jpg">
+    <link rel="stylesheet" href="../bootstrap/dist/css/bootstrap.css">
+    <script src="../jQuery/jquery-1.12.4.js"></script>
+    <script src="../bootstrap/dist/js/bootstrap.js"></script>
+    <style>
+        #outer {
+            width: 500px;
+            height: 500px;
+            margin: 0 auto;
+            padding: 0;
+            text-align: center;
+            margin-top: 100px;
+        }
+
+        #box {
+            width: 100px;
+            height: 100px;
+            background: burlywood;
+            margin: 0 auto;
+            margin-top: 20px;
+        }
+    </style>
+
+</head>
+
+<body>
+<div id="outer">
+    <button class="btn btn-primary">变宽</button>
+    <button class="btn btn-warning">变高</button>
+    <button class="btn btn-success">变色</button>
+    <button class="btn btn-info">隐藏</button>
+    <button class="btn btn-danger">重置</button>
+    <div id="box"></div>
+</div>
+<script>
+    var btns = document.getElementsByTagName('button');
+    var box = document.getElementById('box');
+    var keys = ["width", "height", "background", "display", "display"];
+    var values = ["200px", "200px", "red", "none", "block"];
+    $(function () {
+        for (i = 0; i < btns.length; i++) {
+            btns[i].index = i;
+            btns[i].onclick = function () {
+                this.index == btns.length - 1 && (box.style.cssText = "");
+                $('#box').css(keys[this.index],values[this.index]);
+                //box.style[keys[this.index]] = values[this.index];
+               //box.setAttribute('keys[this.index]','values[this.index]');
+            }
+        }
+    })
+</script>
+</body>
+</html>

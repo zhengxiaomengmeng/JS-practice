@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>函数传参，改变Div任意属性的值</title>
+    <link rel="icon" href="../pics/dream.jpg">
+    <style type="text/css">
+        body,p{margin:0;padding:0;}
+        body{color:#333;font:12px/1.5 Tahoma;padding-top:10px;}
+        #outer{width:300px;margin:0 auto;}
+        p{margin-bottom:10px;}
+        button{margin-right:70px;}
+        label{width:5em;display:inline-block;text-align:right;}
+        input{padding:3px;font-family:inherit;border:1px solid #ccc;}
+        #div1{color:#fff;width:180px;height:180px;background:#000;margin:0 auto;padding:10px;}
+    </style>
+    <script src="../jQuery/jquery-1.12.4.js"></script>
+    <script>
+        function changstyle(ele,prop,value) {
+            ele.style[prop] = value;
+        }
+        $(function () {
+            //console.log($('button')[1]);
+            //console.log($('input')[0].innerText);
+            // $('button')[0].click(function () {
+            //     $('#div1').css($('input')[0].innerText,$('input')[1].innerText)
+            // })
+            // $('button')[1].click(function () {
+            //     $('#div1').css($('input')[0].value,$('input')[1].value)
+            // })
+            var btns = $('button');
+            var inputs = $('input');
+            var div = document.getElementById("div1");
+            btns[0].onclick = function () {
+                changstyle(div,inputs[0].value,inputs[1].value);
+            }
+            btns[1].onclick = function () {
+                div.removeAttribute(style);
+            }
+
+            // var div = document.getElementById("div1");
+            // var btns = document.getElementsByTagName("button");
+            // var inputs = document.getElementsByTagName("input");
+            // btns[0].onclick = function () {
+            //     console.log(inputs[0].value);
+            //     changstyle(div,inputs[0].value,inputs[1].value);
+            // }
+            // btns[1].onclick = function () {
+            //     div.removeAttribute(style);
+            // }
+        })
+    </script>
+</head>
+<body>
+<div id="outer">
+    <p><label>属性名：</label><input type="text" value="background" /></p>
+    <p><label>属性值：</label><input type="text" value="blue" /></p>
+    <p><label></label><button>确定</button><button>重置</button></p>
+</div>
+<div id="div1">在上方输入框输入"属性名"及"属性值"，点击确定按钮查看效果。</div>
+</body>
+</html>

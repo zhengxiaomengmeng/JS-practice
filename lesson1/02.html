@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>网页换肤</title>
+    <link rel="icon" href="../pics/dream.jpg">
+    <style type="text/css">
+        html, body, ul, li {
+            padding: 0;
+            margin: 0;
+        }
+
+        .container {
+            width: 500px;
+            margin: 0 auto;
+            text-align: center;
+            overflow: hidden;
+            zoom: 1;
+        }
+
+        li {
+            list-style-type: none;
+        }
+
+        a:link, a:visited {
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .color, .toolbar {
+            overflow: hidden;
+            zoom: 1;
+        }
+
+        .color {
+            margin: 10px 0;
+        }
+
+        .color li {
+            float: left;
+            width: 6px;
+            height: 6px;
+            cursor: pointer;
+            overflow: hidden;
+            margin-right: 10px;
+            text-indent: -9999px;
+            border-width: 4px;
+            border-style: solid;
+        }
+
+        .color li.current {
+            background: #fff !important;
+        }
+
+        #red {
+            border-color: red;
+            background: red;
+        }
+
+        #green {
+            border-color: green;
+            background: green;
+        }
+
+        #black {
+            border-color: black;
+            background: black;
+        }
+
+        .toolbar {
+            margin: 10px auto;
+            border: 1px solid #fff;
+        }
+
+        .toolbar li {
+            float: left;
+            width: 82px;
+            line-height: 25px;
+            text-align: center;
+            border-right: 1px solid #fff;
+        }
+
+        .toolbar li.last {
+            width: 83px;
+            border-right-width: 0;
+        }
+
+        .toolbar li a {
+        color: #fff;
+        }
+    </style>
+    <link rel="stylesheet" href="02css/green.css">
+    <script type="text/javascript">
+        window.onload = function () {
+            var link = document.getElementsByTagName('link')[1];
+            var lis = document.getElementsByClassName('color')[0].getElementsByTagName('li');
+
+            for (i=0;i<lis.length;i++){
+                lis[i].onclick = function () {
+                    this.className='current';
+                    link.setAttribute('href','02css/'+ this.id+'.css');
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<div class="container">
+    <ul class="color">
+        <li id="red" title="红色">红</li>
+        <li id="green" class="current" title="绿色">绿</li>
+        <li id="black" title="黑色">黑</li>
+    </ul>
+    <ul class="toolbar">
+        <li><a href="javascrpit:0">新闻</a></li>
+        <li><a href="javascrpit:0">娱乐</a></li>
+        <li><a href="javascrpit:0">体育</a></li>
+        <li><a href="javascrpit:0">电影</a></li>
+        <li><a href="javascrpit:0">音乐</a></li>
+        <li class="last"><a href="javascrpit:0">旅游</a></li>
+    </ul>
+</div>
+</body>
+</html>
