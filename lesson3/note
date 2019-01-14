@@ -1,0 +1,5 @@
+1.用typeof查看数据类型
+    用<pre>标签保留空格和换行符； "&lt;" 代表 "<"，"&gt;" 代表 ">"，"&amp;" 代表 "&"。
+2.用parseInt解析数字，并求和
+    input属于行内替换元素。height/width/padding/margin均可用。效果等于块元素。
+    行内非替换元素，例如, height/width/padding top、bottom/margin top、bottom均无效果。只能用padding left、right和margin left、right改变宽度。
