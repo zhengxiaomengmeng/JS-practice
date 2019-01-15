@@ -2,26 +2,25 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>累加按钮，自加1</title>
+    <title>页面加载后累加，自加1</title>
     <link rel="icon" href="../pics/dream.jpg">
-    <style>
+    <style type="text/css">
         body {
             text-align: center;
+            font:700 30px/1.5 arial;
         }
     </style>
     <script>
         window.onload = function () {
-            var btn = document.getElementsByTagName('button')[0];
+            var body = document.body;
             var i = 0;
-            btn.onclick = function () {
-                btn.innerHTML = ++i;
-                alert(i)
-            }
+            setInterval(function () {
+                body.innerHTML = ++i;
+            }, 1000)
         }
     </script>
 </head>
 <body>
-<!--<input type="button" value="0">-->
-<button>0</button>
+
 </body>
 </html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>简易网页时钟</title>
+    <link rel="icon" href="../pics/dream.jpg">
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+            color: #fff;
+            font: 16px/1.5 \5fae\8f6f\96c5\9ed1;
+        }
+
+        #clock {
+            width: 300px;
+            background: #000;
+            margin: 10px auto;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        span {
+            color: #000;
+            width: 80px;
+            line-height: 2;
+            background: #fbfbfb;
+            border: 2px solid #b4b4b4;
+            margin: 0 10px;
+            padding: 0 10px;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var clock = document.getElementById('clock');
+            var spans = document.getElementsByTagName('span');
+            setInterval(gettime, 1000);
+            gettime();
+
+            function gettime() {
+                var date = new Date();
+                var dates = [date.getHours(), date.getMinutes(), date.getSeconds()];
+                for (var i in dates) {
+                    spans[i].innerHTML = format(dates[i]);
+                }
+            };
+
+            function format(data) {
+                return data.toString().replace('/^(\d)$/', '0$1');
+            }
+        }
+    </script>
+</head>
+<body>
+<div id="clock">
+    <span></span>点<span></span>分<span></span>秒
+</div>
+</body>
+</html>
